@@ -26,7 +26,7 @@ class PostsController {
     const id = req.body._id;
     const text = req.body.text;
 
-    Posts.findOneAndUpdate(id, {$set: {text:text}} , function(err, result){
+    Posts.findOneAndUpdate({_id: id}, {$set: {text:text}} , function(err, result){
       if(err){
         res.send(err);
       } else {
